@@ -70,7 +70,45 @@ d2G_dz2
 
 ```
 
+# Partial derivatives
 
+```{r}
+fxyz <- expression(2 * x ^ 2 * y - 3 * x + 1 + (4 * z ^ 4 * x))
+
+df_dx <- D(expr = fxyz, name = 'x')
+
+df_dy <- D(expr = fxyz, name = 'y')
+
+df_dz <- D(expr = fxyz, name = 'z')
+
+df_dx
+df_dy
+df_dz
+
+
+```
+
+
+# Make some plots
+
+```{r}
+eq <- function(x) {2.4 * exp(-0.05 * x) * sin(x)}
+
+ggplot(data = data.frame(x = c(-0.5, 0.5)), aes(x = x)) + 
+         stat_function(fun = eq)
+```
+
+
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + geom_point(aes(color = species)) + 
+  labs(x = "Bill length (mm)", y = "Bill depth (mm)", title = "Bill depth vs bill length", caption = "Data collected by KB Gorman et al. at Palmer Station")
+```
+
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + geom_jitter(aes(color = species)) + labs(x = "Species", y = "Flipper length (mm)", title = "Flipper length by species" )
+```
 
 
 
