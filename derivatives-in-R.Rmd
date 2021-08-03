@@ -11,8 +11,8 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-
-## A
+# First order univariate derivatives
+### A
 
 ```{r}
 fx <- expression(x^2)
@@ -26,7 +26,7 @@ x <- 3
 eval(expr = df_dx)
 ```
 
-## B
+### B
 
 ```{r}
 Pa <- expression(2 * (3 * a + 2) ^ 4 - 5)
@@ -56,6 +56,19 @@ eval(expr = dg_dt)
 ```
 
 
+# Higher order univariate darivatives
+
+```{r}
+Gz <- expression(4.6 - 1.9 * z ^ 3)
+
+dG_dz <- D(expr = Gz, name = 'z')
+
+d2G_dz2 <- D(expr = dG_dz, name = 'z')
+
+d2G_dz2
+
+
+```
 
 
 

@@ -171,8 +171,10 @@ pre code {
 </div>
 
 
-<div id="a" class="section level2">
-<h2>A</h2>
+<div id="first-order-univariate-derivatives" class="section level1">
+<h1>First order univariate derivatives</h1>
+<div id="a" class="section level3">
+<h3>A</h3>
 <pre class="r"><code>fx &lt;- expression(x^2)
 
 df_dx &lt;- D(expr = fx, name = &#39;x&#39;)
@@ -184,8 +186,8 @@ df_dx</code></pre>
 eval(expr = df_dx)</code></pre>
 <pre><code>## [1] 6</code></pre>
 </div>
-<div id="b" class="section level2">
-<h2>B</h2>
+<div id="b" class="section level3">
+<h3>B</h3>
 <pre class="r"><code>Pa &lt;- expression(2 * (3 * a + 2) ^ 4 - 5)
 
 dP_da &lt;- D(expr = Pa, name = &#39;a&#39;)
@@ -207,6 +209,18 @@ t &lt;- 0
 
 eval(expr = dg_dt)</code></pre>
 <pre><code>## [1] -4</code></pre>
+</div>
+</div>
+<div id="higher-order-univariate-darivatives" class="section level1">
+<h1>Higher order univariate darivatives</h1>
+<pre class="r"><code>Gz &lt;- expression(4.6 - 1.9 * z ^ 3)
+
+dG_dz &lt;- D(expr = Gz, name = &#39;z&#39;)
+
+d2G_dz2 &lt;- D(expr = dG_dz, name = &#39;z&#39;)
+
+d2G_dz2</code></pre>
+<pre><code>## -(1.9 * (3 * (2 * z)))</code></pre>
 </div>
 
 
